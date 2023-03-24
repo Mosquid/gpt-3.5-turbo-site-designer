@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Power of AI: powered by AI</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #content {
+        width: 500px;
+        margin: 0 auto;
+        padding: 16px;
+        font-family: sans-serif;
+        line-height: 1.4;
+      }
+      h1 {
+        margin-top: 50px;
+      }
+      p {
+        margin-top: 30px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>The Power of AI: powered by AI</h1>
+      <h3>
+        Instead of fearing AI or viewing it as a threat, individuals should view
+        it as a tool
+      </h3>
+      <p>
+        Artificial intelligence (AI) is rapidly transforming the way humans
+        approach creativity and career development. While some individuals may
+        fear that AI will take over their jobs or stifle their creativity, the
+        reality is quite different. In fact, AI can enhance and augment human
+        creativity in ways that were previously impossible, enabling individuals
+        to achieve more in their careers than ever before.
+      </p>
+      <img src="/planet.jpg" alt="planet" />
+      <p>
+        By embracing AI and learning how to use it effectively, individuals can
+        unlock new possibilities and achieve success beyond their wildest
+        dreams.
+      </p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          const message = window.document.documentElement.outerHTML;
+          window.parent.postMessage({ message }, "*");
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
