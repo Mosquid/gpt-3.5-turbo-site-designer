@@ -56,7 +56,6 @@ export default async function handler(
 }
 
 export const config = {
-  runtime: "edge",
   api: {
     bodyParser: {
       sizeLimit: "1mb",
