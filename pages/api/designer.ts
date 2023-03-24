@@ -52,6 +52,7 @@ export default async function handler(
   } catch (error) {
     // @ts-ignore
     console.log(error);
+    res.status(400).json({ error });
   }
 }
 
