@@ -38,7 +38,7 @@ export default async function handler(
       messages,
     });
     const { message } = response.data.choices[0];
-    console.log(message);
+
     const regex = /<html lang=\"en\">[\s\S]*<\/html>/;
 
     let { content } = message || {};
@@ -56,6 +56,7 @@ export default async function handler(
 }
 
 export const config = {
+  runtime: "edge",
   api: {
     bodyParser: {
       sizeLimit: "1mb",
