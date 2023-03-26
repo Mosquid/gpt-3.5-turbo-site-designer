@@ -43,7 +43,7 @@ export default async function handler(
     });
     const { message } = response.data.choices[0];
 
-    const regex = /<html lang=\"en\">[\s\S]*<\/html>/;
+    const regex = /<html[\s\S]*<\/html>/;
 
     let { content } = message || {};
     const match = (content || "").match(regex);
