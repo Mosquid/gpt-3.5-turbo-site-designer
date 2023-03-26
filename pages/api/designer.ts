@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { set } from "@/services/redis";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
@@ -32,9 +33,12 @@ export default async function handler(
   ];
 
   try {
+    const ts = new Date().getTime();
+
+    res.status(200).json({ ts });
+
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      // max_tokens: 10,
       messages,
     });
     const { message } = response.data.choices[0];
@@ -48,10 +52,10 @@ export default async function handler(
       content = match[0];
     }
 
-    res.status(200).json({ content });
+    await set(ts.toString(), content || "");
   } catch (error) {
     // @ts-ignore
-    console.log(error);
+    console.error(error);
     res.status(400).json({ error });
   }
 }
